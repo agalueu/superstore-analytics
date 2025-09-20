@@ -6,7 +6,7 @@ The goal is to understand sales performance, profitability, and customer trends 
 
 ## 📊 Dataset
 - **Source:** Superstore sample dataset (public, used widely in BI training)
-- **Size:** ~10,000 rows (this repo includes a small sample: `data/sample_superstore.csv`)
+- **Size:** ~10,000 rows (this repo includes the file used for this project: `superstore.csv`)
 - **Privacy:** Public, no sensitive information
 
 ## ⚙️ Tools
