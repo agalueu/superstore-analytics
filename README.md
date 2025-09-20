@@ -21,8 +21,8 @@ The goal is to understand sales performance, profitability, and customer trends 
 
 ## 📂 Repository Structure
 - `sql/` → database schema, load script, and analysis queries
-- `data/` → sample dataset
-- `images/` → screenshots of dashboards
+- `docs/` → sample dataset, ERD
+- `images/` → screenshots of dashboards (power BI) and queries results (PGadmin)
 - `README.md` → project summary and instructions
 
 ## 🚀 How to Reproduce
