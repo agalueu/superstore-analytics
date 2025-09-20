@@ -15,9 +15,11 @@ The goal is to understand sales performance, profitability, and customer trends 
 - Power BI (dashboards & KPIs)
 
 ## ❓ Key Business Questions
-1. Which product categories and subcategories drive the most profit?
-2. How do sales trends evolve monthly and regionally?
-3. What customer segments are most valuable?
+1. Which are the total sales per product?
+2. Which product categories and subcategories drive the most profit?
+3. How do sales trends by category?
+4. how YoY growth by sales and profit have changed over the years based on product´s category?
+5. What customer segments and region combined are most valuable?
 
 ## 📂 Repository Structure
 - `sql/` → database schema, load script, and analysis queries
