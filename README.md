@@ -55,3 +55,13 @@ The data is normalized into these tables:
 
 ![ERD](docs/ERD.png)
 
+## Images shared
+- Example or query and results from top selling category
+- Example of profit hotspot
+- Ready chart on powerBI sammple of some queries into 2 different images
+     * superstore sales analysis
+       In this one we see a overall profitability of the "company" or in this case the superstore database
+     * superstore sales analisys 2
+       we can see on this image some interesting charts on how the rank changes over the years by profit and sales, that rank changes can be usefull for the impact it has on sellings
+       the higher number on rank means the low selling products for example or less sales.
+       We can see same for YoY growth by profit and sales and a overall top sellers each year.
