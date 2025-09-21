@@ -32,7 +32,7 @@ The goal is to understand sales performance, profitability, and customer trends 
 The way i did it was directly in PGadmin, in the workspace (the menu at the left) there is the Server section which is localy in my PC, then right-click on databases and create - database, then put the name in this case superstore and click save.
 
 2. Creating queries at the Query tool workspace (the second icon in the left menu) and start creating tables and importing data, the script i used are in the sql folder as follow:
-   sql/SCHEMA.sql
+   ![SCHEMA](sql/SCHEMA.sql)
 
 3. Then i created another query workspace so i dont mix queries from the schema into analysis .. does can be found at sql/Analysis.sql
 
