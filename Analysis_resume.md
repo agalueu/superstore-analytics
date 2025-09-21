@@ -65,7 +65,6 @@ Present results by Category, Year, Sales, and YoY Growth.
 
 ## Business Insight
 This query highlights how each product category is growing (or declining) year over year. Useful for:
-
     - Spotting high-growth categories worth investing in
     - Detecting categories in decline that may need strategy changes
     - Comparing year-over-year performance across categories
