@@ -101,7 +101,28 @@ This query provides a holistic performance analysis by:
     * Highlighting cumulative sales progression (long-term value creation).
     * Measuring rank shifts → which categories are climbing or losing ground year to year.
 
-5. Which product categories and subcategories drive the most profit?
+5. Highlight the top-selling category each year.
+## Query Purpose
+This query finds the top-selling product category each year, highlighting which category dominated annually in terms of total sales.
+
+## Steps / Logic
+- CTE – total:
+     * Join products, order_details, and orders.
+     * Aggregate total sales and total profit per category and year.
+
+- CTE – ranked:
+     * Use DENSE_RANK() to rank categories within each year by total sales.
+
+- Final SELECT:
+     * Filter to only rank = 1, i.e., the top-selling category for each year.
+     * Show category, year, total sales, and total profit.
+
+## Business Insight
+- Reveals the leading category by sales year over year.
+- Useful for tracking shifts in market dominance — e.g., if Technology was #1 in early years but Office Supplies overtakes later.
+- Can inform category-level investment and long-term trend analysis.
+
+6. Which product categories and subcategories drive the most profit?
 ## Query Purpose
 This query ranks product categories by sales and profit within each region and year.
 
@@ -120,7 +141,7 @@ This query ranks product categories by sales and profit within each region and y
 - Helps reveal if a category is strong in revenue but weak in profitability (or vice versa).
 - Supports decisions around regional product strategy — e.g., where to expand, cut, or adjust pricing.
 
-6. What customer segments and region combined are most valuable?
+7. What customer segments and region combined are most valuable?
 ## Query Purpose
 This query evaluates customer segments within each region by ranking them across sales, profit, and profit margin, then combining those rankings into an overall performance score.
 
