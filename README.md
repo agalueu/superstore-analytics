@@ -34,7 +34,7 @@ The way i did it was directly in PGadmin, in the workspace (the menu at the left
 2. Creating queries at the Query tool workspace (the second icon in the left menu) and start creating tables and importing data, the script i used are in the sql folder as follow:
    [SCHEMA](sql/SCHEMA.sql)
 
-3. Then i created another query workspace so i dont mix queries from the schema into analysis .. does can be found at sql/Analysis.sql
+3. Then i created another query workspace so i dont mix queries from the schema into analysis .. does can be found at [Analysis](sql/Analysis.sql)
 
 ## Database Schema & ERD
 
