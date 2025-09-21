@@ -67,4 +67,4 @@ The data is normalized into these tables:
        We can see same for YoY growth by profit and sales and a overall top sellers each year.
 
 ## Queries analysis and insights from the project
-For detailed SQL queries and insights, see [Analysis Resume](analysis_resume.md)
+For detailed SQL queries and insights, see [Analysis Resume](Analysis_resume.md)
