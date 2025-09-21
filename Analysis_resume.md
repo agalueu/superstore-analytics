@@ -54,7 +54,7 @@ This query calculates year-over-year (YoY) sales growth by product category, sho
 - CTE – preview:
 Use the LAG() window function to get the previous year’s sales for each category (previews_value).
 
--Final Select:
+- Final Select:
 Calculate YoY Growth % as:
 
   YoYGrowth = (this year sales - previous year sales) / previous year sales * 100
