@@ -65,7 +65,7 @@ For the visualization layer, I connected Power BI directly to PostgreSQL:
 
 
 ## Images shared
-- Example or query and results from top selling category [Highlight top selling category](images/Highligh_top_selling_category.png)
+- Example or query and results from top selling category [Highlight top selling category](images/Highlight_top_selling_category.png)
 - Example of profit hotspot [Profit Hotspot](images/profit_hotspot.png)
 - Ready chart on powerBI sammple of some queries into 2 different images
      * superstore sales analysis **** [Superstore Analysis](images/superstore_analysis.png)
