@@ -55,13 +55,22 @@ The data is normalized into these tables:
 
 ![ERD](docs/ERD.png)
 
+## 📊 Power BI Integration
+
+For the visualization layer, I connected Power BI directly to PostgreSQL:
+
+- All SQL queries were first developed and validated in **pgAdmin**.  
+- Using the native PostgreSQL connector, these queries were imported into Power BI.  
+- This workflow allowed me to rely on **SQL for all data modeling and transformations**, keeping Power BI focused on the **visualization and storytelling** aspects.  
+
+
 ## Images shared
-- Example or query and results from top selling category
-- Example of profit hotspot
+- Example or query and results from top selling category [Highlight top selling category](images/Highligh_top_selling_category.png)
+- Example of profit hotspot [Profit Hotspot](images/profit_hotspot.png)
 - Ready chart on powerBI sammple of some queries into 2 different images
-     * superstore sales analysis
+     * superstore sales analysis **** [Superstore Analysis](images/superstore_analysis.png)
        In this one we see a overall profitability of the "company" or in this case the superstore database
-     * superstore sales analisys 2
+     * superstore sales analisys 2 **** [Superstore Analysis 2](images/superstore_analysis_2.png)
        we can see on this image some interesting charts on how the rank changes over the years by profit and sales, that rank changes can be usefull for the impact it has on sellings
        the higher number on rank means the low selling products for example or less sales.
        We can see same for YoY growth by profit and sales and a overall top sellers each year.
