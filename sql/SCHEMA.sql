@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS superstore (
     profit NUMERIC
 );
 
-SET datestyle = 'MDY';
+SET datestyle = 'MDY'; --As the main file (superstore.cvs) has diferent date type
 
 COPY superstore
 FROM 'C:/Program Files/PostgreSQL/17/data/Superstore.csv'
@@ -52,7 +52,7 @@ city TEXT,
 state TEXT,
 postal_code NUMERIC,
 region TEXT
-);
+); --ALL info about customers
 
 CREATE TABLE IF NOT EXISTS orders (
 order_id TEXT PRIMARY KEY,
@@ -60,14 +60,14 @@ order_date DATE,
 ship_date DATE,
 ship_mode TEXT,
 customer_id TEXT REFERENCES customers(customer_id)
-);
+); --ALL info about orders
 
 CREATE TABLE IF NOT EXISTS products (
 product_id TEXT PRIMARY KEY,
 category TEXT,
 sub_category TEXT,
 product_name TEXT
-);
+); --Product catalog
 
 CREATE TABLE IF NOT EXISTS order_details (
 order_id TEXT REFERENCES orders(order_id),
@@ -77,7 +77,7 @@ sales NUMERIC,
 quantity NUMERIC,
 discount NUMERIC,
 profit NUMERIC
-);
+); --the intermediate table between orders and products for the many to many relationship
 
 -- NOW insert the data that we imported into those tables!
 /*
@@ -139,3 +139,4 @@ GROUP BY order_id, product_id;
 CREATE INDEX idx_orders_customer_id ON orders(customer_id);
 CREATE INDEX idx_order_details_order_id ON order_details(order_id);
 CREATE INDEX idx_order_details_product_id ON order_details(product_id);
+
