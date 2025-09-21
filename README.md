@@ -35,3 +35,23 @@ The way i did it was directly in PGadmin, in the workspace (the menu at the left
    sql/SCHEMA.sql
 
 3. Then i created another query workspace so i dont mix queries from the schema into analysis .. does can be found at sql/Analysis.sql
+
+## Database Schema & ERD
+
+The data is normalized into these tables:
+
+- `customers` (customer info + region etc.)  
+- `orders` (order-level info)  
+- `products` (product catalog)  
+- `order_details` (line-item level: sales, quantity, profit etc.)
+
+**Relationships:**
+
+- Each `order` links to one customer.  
+- `order_details` links orders to products (many-to-many through that table).  
+
+
+**Entity Relationship Diagram (ERD):**
+
+![ERD](docs/ERD.png)
+
