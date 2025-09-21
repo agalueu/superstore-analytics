@@ -1,6 +1,6 @@
 In this section I´m going to talk about some results in the different queries that i did in the analysis.sql file, what was the purpose, steps to do it and business insight for this analysis
 
-1. Profit hotspot (TOP and BOTTOM KPIs on power BI)
+##1. Profit hotspot (TOP and BOTTOM KPIs on power BI)
 ## Query Purpose:
 This query analyzes sales and profitability performance across different regions and customer segments.
 
@@ -16,7 +16,7 @@ Profit Margin = Total Profit / Total Sales × 100
 ## Business Insight:
 This query helps reveal which region + segment combinations are the most profitable. For example, management might use this to decide which segments to prioritize in marketing or where to adjust pricing/discount strategies.
 
-2. Total sales per product
+##2. Total sales per product
 ## Query Purpose
 This query identifies the top-selling products by year, showing how sales performance evolves over time at the product level.
 
@@ -41,7 +41,7 @@ Helps identify:
     - Seasonal or trend-driven products (peaks in certain years)
 Useful for product strategy, inventory planning, and targeted promotions.
 
-3. Sales trends by Category
+##3. Sales trends by Category
 ## Query Purpose
 This query calculates year-over-year (YoY) sales growth by product category, showing how sales performance evolves over time.
 
@@ -70,7 +70,7 @@ This query highlights how each product category is growing (or declining) year o
     - Detecting categories in decline that may need strategy changes
     - Comparing year-over-year performance across categories
 
-4. Compute YoY growth for both sales and profit. AND show rank changes from the previous year for each category
+##4. Compute YoY growth for both sales and profit. AND show rank changes from the previous year for each category
 ## Query Purpose
 This query evaluates category-level sales and profit performance across regions and years, including rankings, growth rates, and cumulative trends.
 
@@ -101,7 +101,7 @@ This query provides a holistic performance analysis by:
     * Highlighting cumulative sales progression (long-term value creation).
     * Measuring rank shifts → which categories are climbing or losing ground year to year.
 
-5. Highlight the top-selling category each year.
+##5. Highlight the top-selling category each year.
 ## Query Purpose
 This query finds the top-selling product category each year, highlighting which category dominated annually in terms of total sales.
 
@@ -122,7 +122,7 @@ This query finds the top-selling product category each year, highlighting which 
 - Useful for tracking shifts in market dominance — e.g., if Technology was #1 in early years but Office Supplies overtakes later.
 - Can inform category-level investment and long-term trend analysis.
 
-6. Which product categories and subcategories drive the most profit?
+##6. Which product categories and subcategories drive the most profit?
 ## Query Purpose
 This query ranks product categories by sales and profit within each region and year.
 
@@ -141,7 +141,7 @@ This query ranks product categories by sales and profit within each region and y
 - Helps reveal if a category is strong in revenue but weak in profitability (or vice versa).
 - Supports decisions around regional product strategy — e.g., where to expand, cut, or adjust pricing.
 
-7. What customer segments and region combined are most valuable?
+##7. What customer segments and region combined are most valuable?
 ## Query Purpose
 This query evaluates customer segments within each region by ranking them across sales, profit, and profit margin, then combining those rankings into an overall performance score.
 
