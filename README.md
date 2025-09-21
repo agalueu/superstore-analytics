@@ -65,3 +65,6 @@ The data is normalized into these tables:
        we can see on this image some interesting charts on how the rank changes over the years by profit and sales, that rank changes can be usefull for the impact it has on sellings
        the higher number on rank means the low selling products for example or less sales.
        We can see same for YoY growth by profit and sales and a overall top sellers each year.
+
+## Queries analysis and insights from the project
+For detailed SQL queries and insights, see [Analysis Resume](analysis_resume.md)
