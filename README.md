@@ -56,7 +56,6 @@ The data is normalized into these tables:
 ![ERD](docs/ERD.png)
 
 ## 📊 Power BI Integration
-
 For the visualization layer, I connected Power BI directly to PostgreSQL:
 
 - All SQL queries were first developed and validated in **pgAdmin**.  
