@@ -4,7 +4,7 @@ In this section I´m going to talk about some results in the different queries t
 ## Query Purpose:
 This query analyzes sales and profitability performance across different regions and customer segments.
 
-##Steps:
+## Steps:
 - Aggregate sales and profit from the Orders and Order_Details tables, grouped by Region and Segment.
 - Use a CTE to simplify logic and make the query more modular.
 - Calculate Profit Margin as a percentage:
