@@ -1,4 +1,4 @@
-In this section I´m going to talk about some results in the different queries that i did in the analysis.sql file, what was the purpose, steps to do it and business insight for this analysis
+In this section I´m going to talk about some results in the different queries that i did in the [Query Analysis](sql/Analysis.sql) file, what was the purpose, steps to do it and business insight for this analysis
 
 # 1. Profit hotspot (TOP and BOTTOM KPIs on power BI)
 ### Query Purpose:
