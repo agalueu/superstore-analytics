@@ -16,7 +16,7 @@ Profit Margin = Total Profit / Total Sales × 100
 ### Business Insight:
 This query helps reveal which region + segment combinations are the most profitable. For example, management might use this to decide which segments to prioritize in marketing or where to adjust pricing/discount strategies.
 
-Sample img: [SCHEMA](sql/SCHEMA.sql)
+Sample img: [Profit Hotspot](images/query_profit_hotspot.png)
 
 # 2. Total sales per product
 ### Query Purpose
@@ -43,7 +43,7 @@ Helps identify:
     - Seasonal or trend-driven products (peaks in certain years)
 Useful for product strategy, inventory planning, and targeted promotions.
 
-Sample img: [SCHEMA](sql/SCHEMA.sql)
+Sample img: [Total sales per product](images/query_total_sales_per_product.png)
 
 # 3. Sales trends by Category
 ### Query Purpose
@@ -73,7 +73,7 @@ This query highlights how each product category is growing (or declining) year o
     - Detecting categories in decline that may need strategy changes
     - Comparing year-over-year performance across categories
 
-Sample img: [SCHEMA](sql/SCHEMA.sql)
+Sample img: [Sales trends](images/query_sales_trends_by_category.png)
 
 # 4. Compute YoY growth for both sales and profit. AND show rank changes from the previous year for each category
 ### Query Purpose
@@ -106,7 +106,7 @@ This query provides a holistic performance analysis by:
     * Highlighting cumulative sales progression (long-term value creation).
     * Measuring rank shifts → which categories are climbing or losing ground year to year.
 
-Sample img: [SCHEMA](sql/SCHEMA.sql)
+Sample img: [Yoy & rank changes](images/query_yoy_and_rank_changes_1.png) [Yoy & rank changes 2](images/query_yoy_and_rank_changes_2.png)
 
 # 5. Highlight the top-selling category each year.
 ## Query Purpose
@@ -129,7 +129,7 @@ This query finds the top-selling product category each year, highlighting which 
 - Useful for tracking shifts in market dominance — e.g., if Technology was #1 in early years but Office Supplies overtakes later.
 - Can inform category-level investment and long-term trend analysis.
 
-Sample img: [SCHEMA](sql/SCHEMA.sql)
+Sample img: [Top Selling Category](images/query_top_selling_category.png)
 
 # 6. Which product categories and subcategories drive the most profit?
 ### Query Purpose
@@ -150,7 +150,7 @@ This query ranks product categories by sales and profit within each region and y
 - Helps reveal if a category is strong in revenue but weak in profitability (or vice versa).
 - Supports decisions around regional product strategy — e.g., where to expand, cut, or adjust pricing.
 
-Sample img: [SCHEMA](sql/SCHEMA.sql)
+Sample img: [Most profit category](images/query_most_profit.png)
 
 # 7. What customer segments and region combined are most valuable?
 ### Query Purpose
@@ -168,10 +168,11 @@ This query evaluates customer segments within each region by ranking them across
     * Output totals, ranks, and compute an “Overall Performer” score as the average of the three ranks.
     * Order results by region and performance score.
 
-Sample img: [SCHEMA](sql/SCHEMA.sql)
 ### Business Insight
 - Identifies which segments perform best within each region not just in raw sales, but also in profitability and efficiency.
 - The “Overall Performer” score provides a balanced benchmark across multiple KPIs.
 Useful for:
     * Targeting marketing efforts toward the most profitable and efficient customer groups.
     * Spotting segments that generate high sales but weak margins (or vice versa).
+
+Sample img: [Most valuable Customers and region](images/query_customers_and_region_most_valuable.png)
