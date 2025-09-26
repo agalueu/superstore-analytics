@@ -22,10 +22,11 @@ The goal is to understand sales performance, profitability, and customer trends 
 5. What customer segments and region combined are most valuable?
 
 ## 📂 Repository Structure
-- `sql/` → database schema, load script, and analysis queries
-- `docs/` → sample dataset, ERD
-- `images/` → screenshots of dashboards (power BI) and queries results (PGadmin)
-- `README.md` → project summary and instructions
+- docs/                  → ERD
+- images/                → screenshots of dashboards (Power BI) and query results (pgAdmin)
+- sql/                   → database schema, load script, and analysis queries
+- Analysis_resume.md     → All queries analysis used for this repository
+- README.md              → project summary and instructions 
 
 ## 🚀 How to Reproduce
 1. Create a new PostgreSQL database:
