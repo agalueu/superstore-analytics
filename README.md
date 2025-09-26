@@ -22,7 +22,7 @@ The goal is to understand sales performance, profitability, and customer trends 
 5. What customer segments and region combined are most valuable?
 
 ## 📂 Repository Structure
-- docs/                  → ERD
+- docs/                  → ERD & raw dataset files
 - images/                → screenshots of dashboards (Power BI) and query results (pgAdmin)
 - sql/                   → database schema, load script, and analysis queries
 - Analysis_resume.md     → All queries analysis used for this repository
