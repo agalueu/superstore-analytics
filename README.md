@@ -28,14 +28,6 @@ The goal is to understand sales performance, profitability, and customer trends 
 - Analysis_resume.md     → All queries analysis used for this repository
 - README.md              → project summary and instructions 
 
-## 🚀 How to Reproduce
-1. Create a new PostgreSQL database:
-The way i did it was directly in PGadmin, in the workspace (the menu at the left) there is the Server section which is localy in my PC, then right-click on databases and create - database, then put the name in this case superstore and click save.
-
-2. Creating queries at the Query tool workspace (the second icon in the left menu) and start creating tables and importing data, the script i used are in the sql folder as follow:
-   [SCHEMA](sql/SCHEMA.sql)
-
-3. Then i created another query workspace so i dont mix queries from the schema into analysis .. does can be found at [Analysis](sql/Analysis.sql)
 
 ## Database Schema & ERD
 
@@ -55,6 +47,15 @@ The data is normalized into these tables:
 **Entity Relationship Diagram (ERD):**
 
 ![ERD](docs/ERD.png)
+
+## 🔄 How to Reproduce
+- Create a PostgreSQL database:
+      * In pgAdmin → right-click Databases → Create - Database → name it `superstore` (or any name you preffer).
+- Schema & Data Import:
+      * Run the schema script in [SCHEMA](sql/SCHEMA.sql) to create all tables and insert data.
+- Sample queries:
+      * Analytical SQL queries are available in [Analysis](sql/Analysis.sql).
+      * These queries can be run in pgAdmin or connected directly to Power BI for visualization.
 
 ## 📊 Power BI Integration
 For the visualization layer, I connected Power BI directly to PostgreSQL:
