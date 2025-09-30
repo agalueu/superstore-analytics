@@ -1,4 +1,4 @@
-# 🔧Superstore Analytics
+# 🔧 Superstore Analytics
 
 ## 📌 Overview
 This project analyzes sales and profitability using the **Superstore dataset**.  
