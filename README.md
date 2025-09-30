@@ -60,7 +60,7 @@ The data is normalized into these tables:
       * Analytical SQL queries are available in [Analysis](sql/Analysis.sql).
       * These queries can be run in pgAdmin or connected directly to Power BI for visualization.
 
-## 📊 Power BI Integration
+## 📊 Power BI dashboard
 For the visualization layer, I connected Power BI directly to PostgreSQL:
 
 - All SQL queries were first developed and validated in **pgAdmin**.  
@@ -73,7 +73,7 @@ For the visualization layer, I connected Power BI directly to PostgreSQL:
      * Ranking shifts over the years by profit and sales.
      * Year-over-Year growth in both sales and profit.
      * Top-selling products per year, showing how market dynamics evolve.
-     * Rankings: a higher rank number indicates lower-selling or less profitable products, while top ranks highlight strong performers.
+     * Rankings: a higher rank number indicates lower-selling or less profitable products, while top ranks highlight strong performers ...
 [Superstore Analysis 2](images/superstore_analysis_2.png)
 
 ## ✅ Key Takeaways
