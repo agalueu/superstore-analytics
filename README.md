@@ -1,4 +1,4 @@
-# Superstore Analytics
+# 🔧Superstore Analytics
 
 ## 📌 Overview
 This project analyzes sales and profitability using the **Superstore dataset**.  
@@ -9,7 +9,10 @@ The goal is to understand sales performance, profitability, and customer trends 
 - **Size:** ~10,000 rows (this repo includes the file used for this project: `superstore.csv`)
 - **Privacy:** Public, no sensitive information
 
-## ⚙️ Tools
+## 🌐 Original Data Source
+The dataset originates from a public Superstore Sales dataset commonly used in analytics projects. It contains information about orders, customers, products, sales, and profits.
+
+## ⚙️ Tools & Technologies
 - PostgreSQL
 - SQL (CTEs, window functions, aggregates, joins)
 - Power BI (dashboards & KPIs)
@@ -63,18 +66,13 @@ For the visualization layer, I connected Power BI directly to PostgreSQL:
 - All SQL queries were first developed and validated in **pgAdmin**.  
 - Using the native PostgreSQL connector, these queries were imported into Power BI.  
 - This workflow allowed me to rely on **SQL for all data modeling and transformations**, keeping Power BI focused on the **visualization and storytelling** aspects.  
+- Top Selling Category ... [Highlight top selling category](images/Highlight_top_selling_category.png)
+- Identifying a profit hotspot within the dataset ... [Profit Hotspot](images/profit_hotspot.png)
+- An overall profitability view of the company (Superstore database). It highlights sales and profit distribution across categories and regions ... [Superstore Analysis](images/superstore_analysis.png)
+- deeper insights:
+     * Ranking shifts over the years by profit and sales.
+     * Year-over-Year growth in both sales and profit.
+     * Top-selling products per year, showing how market dynamics evolve.
+     * Rankings: a higher rank number indicates lower-selling or less profitable products, while top ranks highlight strong performers.
+[Superstore Analysis 2](images/superstore_analysis_2.png)
 
-
-## Images shared
-- Example or query and results from top selling category [Highlight top selling category](images/Highlight_top_selling_category.png)
-- Example of profit hotspot [Profit Hotspot](images/profit_hotspot.png)
-- Ready chart on powerBI sammple of some queries into 2 different images
-     * superstore sales analysis **** [Superstore Analysis](images/superstore_analysis.png)
-       In this one we see a overall profitability of the "company" or in this case the superstore database
-     * superstore sales analisys 2 **** [Superstore Analysis 2](images/superstore_analysis_2.png)
-       we can see on this image some interesting charts on how the rank changes over the years by profit and sales, that rank changes can be usefull for the impact it has on sellings
-       the higher number on rank means the low selling products for example or less sales.
-       We can see same for YoY growth by profit and sales and a overall top sellers each year.
-
-## Queries analysis and insights from the project
-For detailed SQL queries and insights, see [Analysis Resume](Analysis_resume.md)
