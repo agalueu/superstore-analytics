@@ -76,3 +76,8 @@ For the visualization layer, I connected Power BI directly to PostgreSQL:
      * Rankings: a higher rank number indicates lower-selling or less profitable products, while top ranks highlight strong performers.
 [Superstore Analysis 2](images/superstore_analysis_2.png)
 
+## ✅ Key Takeaways
+
+- Sales distribution varies significantly by region and category.
+- Profitability is driven by high-margin categories such as Technology.
+- Certain sub-categories (e.g., Tables) show consistent losses, highlighting opportunities for process optimization.
