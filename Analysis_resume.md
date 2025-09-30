@@ -1,10 +1,10 @@
 In this section I´m going to talk about some results in the different queries that i did in the [Query Analysis](sql/Analysis.sql) file, what was the purpose, steps to do it and business insight for this analysis
 
-# 1. Profit hotspot (TOP and BOTTOM KPIs on power BI)
-### Query Purpose:
+# 1. Profit hotspot
+### 📝 Query Purpose:
 This query analyzes sales and profitability performance across different regions and customer segments.
 
-### Steps:
+### ⚙️ Steps:
 - Aggregate sales and profit from the Orders and Order_Details tables, grouped by Region and Segment.
 - Use a CTE to simplify logic and make the query more modular.
 - Calculate Profit Margin as a percentage:
@@ -13,16 +13,16 @@ Profit Margin = Total Profit / Total Sales × 100
 
 - Rank the results by highest margin to identify the most profitable regions/segments.
 
-### Business Insight:
+### 📊 Business Insight:
 This query helps reveal which region + segment combinations are the most profitable. For example, management might use this to decide which segments to prioritize in marketing or where to adjust pricing/discount strategies.
 
 Sample img: [Profit Hotspot](images/query_profit_hotspot.png)
 
 # 2. Total sales per product
-### Query Purpose
+### 📝 Query Purpose
 This query identifies the top-selling products by year, showing how sales performance evolves over time at the product level.
 
-### Steps / Logic
+### ⚙️ Steps / Logic
 - Join tables:
       * products → to get product names
       * order_details → to get sales amounts per product
@@ -36,7 +36,7 @@ This query identifies the top-selling products by year, showing how sales perfor
       * Group by product and year
       * Sort results by total_sales DESC to highlight best performers.
 
-### Business Insight
+### 📊 Business Insight
 This query reveals which products drive the most revenue each year.
 Helps identify:
     - Consistently strong products (long-term bestsellers)
@@ -46,10 +46,10 @@ Useful for product strategy, inventory planning, and targeted promotions.
 Sample img: [Total sales per product](images/query_total_sales_per_product.png)
 
 # 3. Sales trends by Category
-### Query Purpose
+### 📝 Query Purpose
 This query calculates year-over-year (YoY) sales growth by product category, showing how sales performance evolves over time.
 
-### Steps / Logic
+### ⚙️ Steps / Logic
 - CTE – sales:
     * Join products, order_details, and orders
     * Aggregate sales by category and year
@@ -67,7 +67,7 @@ Use NULLIF(previews_value, 0) to avoid division by zero errors.
 
 Present results by Category, Year, Sales, and YoY Growth.
 
-### Business Insight
+### 📊 Business Insight
 This query highlights how each product category is growing (or declining) year over year. Useful for:
     - Spotting high-growth categories worth investing in
     - Detecting categories in decline that may need strategy changes
@@ -76,10 +76,10 @@ This query highlights how each product category is growing (or declining) year o
 Sample img: [Sales trends](images/query_sales_trends_by_category.png)
 
 # 4. Compute YoY growth for both sales and profit. AND show rank changes from the previous year for each category
-### Query Purpose
+### 📝 Query Purpose
 This query evaluates category-level sales and profit performance across regions and years, including rankings, growth rates, and cumulative trends.
 
-### Steps / Logic
+### ⚙️ Steps / Logic
 - CTE – sales:
     * Join customers, orders, order_details, and products.
     * Aggregate sales and profit by category, region, and year.
@@ -99,7 +99,7 @@ This query evaluates category-level sales and profit performance across regions 
     * Output category, region, year, sales, profit, cumulative sales, YoY growth, ranks, and rank changes.
     * Order results by category, region, and year for a clean timeline.
 
-### Business Insight
+### 📊 Business Insight
 This query provides a holistic performance analysis by:
     * Showing which categories dominate sales & profit in each region/year.
     * Tracking growth trends (YoY %).
@@ -109,10 +109,10 @@ This query provides a holistic performance analysis by:
 Sample img: [Yoy & rank changes](images/query_yoy_and_rank_changes_1.png) [Yoy & rank changes 2](images/query_yoy_and_rank_changes_2.png)
 
 # 5. Highlight the top-selling category each year.
-## Query Purpose
+## 📝 Query Purpose
 This query finds the top-selling product category each year, highlighting which category dominated annually in terms of total sales.
 
-### Steps / Logic
+### ⚙️ Steps / Logic
 - CTE – total:
      * Join products, order_details, and orders.
      * Aggregate total sales and total profit per category and year.
@@ -124,7 +124,7 @@ This query finds the top-selling product category each year, highlighting which 
      * Filter to only rank = 1, i.e., the top-selling category for each year.
      * Show category, year, total sales, and total profit.
 
-### Business Insight
+### 📊 Business Insight
 - Reveals the leading category by sales year over year.
 - Useful for tracking shifts in market dominance — e.g., if Technology was #1 in early years but Office Supplies overtakes later.
 - Can inform category-level investment and long-term trend analysis.
@@ -132,10 +132,10 @@ This query finds the top-selling product category each year, highlighting which 
 Sample img: [Top Selling Category](images/query_top_selling_category.png)
 
 # 6. Which product categories and subcategories drive the most profit?
-### Query Purpose
+### 📝 Query Purpose
 This query ranks product categories by sales and profit within each region and year.
 
-### Steps / Logic
+### ⚙️ Steps / Logic
 - CTE – sales:
     * Join customers, orders, order_details, and products.
     * Aggregate total sales and total profit per category, region, and year.
@@ -153,10 +153,10 @@ This query ranks product categories by sales and profit within each region and y
 Sample img: [Most profit category](images/query_most_profit.png)
 
 # 7. What customer segments and region combined are most valuable?
-### Query Purpose
+### 📝 Query Purpose
 This query evaluates customer segments within each region by ranking them across sales, profit, and profit margin, then combining those rankings into an overall performance score.
 
-### Steps / Logic
+### ⚙️ Steps / Logic
 - CTE – ranked:
     * Join customers, orders, and order_details.
     * Aggregate total sales, total profit, and calculate profit margin % per region × segment.
@@ -168,7 +168,7 @@ This query evaluates customer segments within each region by ranking them across
     * Output totals, ranks, and compute an “Overall Performer” score as the average of the three ranks.
     * Order results by region and performance score.
 
-### Business Insight
+### 📊 Business Insight
 - Identifies which segments perform best within each region not just in raw sales, but also in profitability and efficiency.
 - The “Overall Performer” score provides a balanced benchmark across multiple KPIs.
 Useful for:
