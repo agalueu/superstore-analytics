@@ -27,8 +27,11 @@ CREATE TABLE IF NOT EXISTS superstore (
     profit NUMERIC
 );
 
-SET datestyle = 'MDY'; --As the main file (superstore.cvs) has diferent date type
+SET datestyle = 'MDY';
 
+-- NOTE:
+-- Update the file path below to match your local environment.
+-- Alternatively, use \copy in psql for client-side import.
 COPY superstore
 FROM 'C:/Program Files/PostgreSQL/17/data/Superstore.csv'
 DELIMITER ','
@@ -52,7 +55,7 @@ city TEXT,
 state TEXT,
 postal_code NUMERIC,
 region TEXT
-); --ALL info about customers
+);
 
 CREATE TABLE IF NOT EXISTS orders (
 order_id TEXT PRIMARY KEY,
@@ -60,24 +63,24 @@ order_date DATE,
 ship_date DATE,
 ship_mode TEXT,
 customer_id TEXT REFERENCES customers(customer_id)
-); --ALL info about orders
+);
 
 CREATE TABLE IF NOT EXISTS products (
 product_id TEXT PRIMARY KEY,
 category TEXT,
 sub_category TEXT,
 product_name TEXT
-); --Product catalog
+);
 
 CREATE TABLE IF NOT EXISTS order_details (
 order_id TEXT REFERENCES orders(order_id),
 product_id TEXT REFERENCES products(product_id),
 PRIMARY KEY (order_id, product_id),
-sales NUMERIC,
-quantity NUMERIC,
-discount NUMERIC,
-profit NUMERIC
-); --the intermediate table between orders and products for the many to many relationship
+sales NUMERIC(10,2) CHECK (sales >= 0),
+quantity INTEGER CHECK (quantity > 0),
+discount NUMERIC(4,2) CHECK (discount BETWEEN 0 AND 1),
+profit NUMERIC(10,2)
+);
 
 -- NOW insert the data that we imported into those tables!
 /*
@@ -90,7 +93,7 @@ done for all other tables except for order details table
 INSERT INTO customers (customer_id, customer_name, segment, country, city, state, postal_code, region)
 SELECT DISTINCT ON (customer_id) customer_id, customer_name, segment, country, city, state, postal_code, region
 FROM superstore
-ORDER BY customer_id;
+ORDER BY customer_id, order_date DESC;
 
 INSERT INTO products (product_id, category, sub_category, product_name)
 SELECT DISTINCT ON (product_id) product_id, category, sub_category, product_name
@@ -139,4 +142,5 @@ GROUP BY order_id, product_id;
 CREATE INDEX idx_orders_customer_id ON orders(customer_id);
 CREATE INDEX idx_order_details_order_id ON order_details(order_id);
 CREATE INDEX idx_order_details_product_id ON order_details(product_id);
-
+CREATE INDEX idx_orders_order_date ON orders(order_date);
+CREATE INDEX idx_customers_region ON customers(region);
