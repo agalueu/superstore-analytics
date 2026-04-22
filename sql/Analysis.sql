@@ -1,4 +1,4 @@
---1. Profit hotspot (TOP and BOTTOM KPIs on power BI)
+--Profit hotspot (TOP and BOTTOM KPIs on power BI)
 WITH sales AS (
 	SELECT  c.region, c.segment, 
 			ROUND(SUM(od.sales), 2) AS total_sales, --total sales per region/segment
@@ -13,23 +13,23 @@ SELECT  region AS "Region",
 		segment AS "Segment",
 		total_sales AS "Total Sales",
 		total_profit AS "Total Profit",
-		ROUND(total_profit/total_sales * 100, 2) AS "Profit Margin"
+		ROUND(total_profit/NULLIF(total_sales, 0) * 100, 2) AS "Profit Margin"
 FROM sales
 ORDER BY "Profit Margin" DESC, region, segment;
 
---2. total sales per product
+--total sales per product
 SELECT  p.product_name,
 		EXTRACT(YEAR FROM (o.order_date)) AS year,
 		SUM(sales) AS total_sales
 FROM products p
-JOIN order_details oi ON p.product_id = oi.product_id
-JOIN orders o ON oi.order_id = o.order_id
+JOIN order_details od ON p.product_id = od.product_id
+JOIN orders o ON od.order_id = o.order_id
 GROUP BY p.product_name, EXTRACT(YEAR FROM (o.order_date))
 ORDER BY total_sales DESC
 /*the ORDER BY clause will show in the table the result we want, for example, if we want the product that performance more sales per year, we should
 do ORDER BY year, total_sales DESC, if we want the product that overall the years performance the most selling just do ORDER BY total_sales DESC*/
 
---3. Sales trends by Category
+--Sales trends by Category
 WITH sales AS (
 	SELECT p.category, EXTRACT (YEAR FROM (o.order_date)) AS year, ROUND(SUM(od.sales), 2) AS total_sales
 	FROM products p
@@ -39,17 +39,17 @@ WITH sales AS (
 ),
 
 preview AS (
-	SELECT *, LAG (total_sales) OVER (PARTITION BY category ORDER BY year) AS previews_value
+	SELECT *, LAG (total_sales) OVER (PARTITION BY category ORDER BY year) AS previous_value
 	FROM sales
 )
 
 SELECT  category AS "Category",
 		year AS "Year",
 		total_sales AS "Total Sales",
-		ROUND((total_sales - previews_value)/NULLIF(previews_value, 0) * 100, 2) AS "YoY Growth"
+		ROUND((total_sales - previous_value)/NULLIF(previous_value, 0) * 100, 2) AS "YoY Growth (%)"
 FROM preview;
 
---4. Compute YoY growth for both sales and profit. AND show rank changes from the previous year for each category
+--Compute YoY growth for both sales and profit. AND show rank changes from the previous year for each category
 --This is showing on power BI in rank changes over years and year over year Growth
 WITH sales AS (
 	SELECT  p.category,
@@ -100,7 +100,7 @@ SELECT  category AS "Category",
 FROM final_results
 ORDER BY category, region, year;
 
---5. Highlight the top-selling category each year.
+--Highlight the top-selling category each year.
 WITH total AS (
 	SELECT /*p.product_name,*/ p.category, EXTRACT(YEAR FROM (o.order_date)) AS year, SUM(od.sales) AS total_sales, SUM(od.profit) AS total_profit
 	FROM products p
@@ -124,7 +124,7 @@ FROM ranked
 WHERE rank = 1;
 
 --Key business question
---6. Which product categories and subcategories drive the most profit?
+--Which product categories and subcategories drive the most profit?
 WITH sales AS (
 	SELECT  p.category,
 		c.region,
@@ -147,7 +147,7 @@ SELECT  category AS "Category",
 		RANK () OVER (PARTITION BY region, year ORDER BY total_profit DESC) AS "Rank by Profit"
 FROM sales;
 
---7. What customer segments and region combined are most valuable?
+--What customer segments and region combined are most valuable?
 WITH ranked AS (
 	SELECT  c.region, c.segment,
 			ROUND(SUM(od.sales), 2) AS total_sales,
@@ -169,7 +169,6 @@ SELECT  region AS "Region",
 		rank_by_sales AS "Rank by Sales",
 		rank_by_profit AS "Rank by Profit",
 		rank_by_margin AS "Margin Rank",
-		(rank_by_sales + rank_by_profit + rank_by_margin) / 3 AS "Overall Performer"
+		(rank_by_sales + rank_by_profit + rank_by_margin) / 3 AS "Composite Rank Score"
 FROM ranked
-
-ORDER BY region, "Overall Performer";
+ORDER BY region, "Composite Rank Score";
